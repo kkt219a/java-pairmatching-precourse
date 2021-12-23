@@ -4,9 +4,13 @@ public enum Course {
 	BACKEND("백엔드"),
 	FRONTEND("프론트엔드");
 
-	private final String name;
+	private final String title;
 
-	Course(String name) {
-		this.name = name;
+	Course(String title) {
+		this.title = title;
+	}
+
+	public String getTitle() {
+		return title;
 	}
 }
