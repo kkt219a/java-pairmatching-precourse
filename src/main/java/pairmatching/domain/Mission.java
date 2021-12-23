@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import pairmatching.constant.Notification;
+
 public enum Mission {
 	CAR_RACING(Level.LEVEL1, "자동차경주"),
 	LOTTO(Level.LEVEL1, "로또"),
@@ -36,5 +38,12 @@ public enum Mission {
 			.filter(mission -> mission.level.equals(level))
 			.map(Mission::getTitle)
 			.collect(Collectors.toList());
+	}
+
+	public static Mission of(String title) {
+		return Arrays.stream(Mission.values())
+			.filter(mission -> mission.title.equals(title))
+			.findFirst()
+			.orElseThrow(() -> new IllegalArgumentException(Notification.NOT_FOUND_MISSION.getMessage()));
 	}
 }
