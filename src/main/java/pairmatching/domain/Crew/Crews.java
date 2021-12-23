@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import pairmatching.constant.Notification;
 import pairmatching.domain.Course;
 
 public class Crews {
@@ -18,7 +19,7 @@ public class Crews {
 	private void validateDuplicate(List<Crew> crews) {
 		Set<Crew> crewSet = new HashSet<>(crews);
 		if(crewSet.size() != crews.size()) {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException(Notification.CREW_NAME_DUPLICATE.getMessage());
 		}
 	}
 
