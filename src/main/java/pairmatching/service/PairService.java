@@ -37,7 +37,7 @@ public class PairService {
 		PairCrews pairCrews = null;
 		for(; remainCount < MAX_PAIR_COUNT ; remainCount++) {
 			pairCrews = makePairCrews(content.getCourse());
-			if(pairs.isDuplicateCrew(content,pairCrews)) {
+			if(!pairs.isDuplicateCrew(content,pairCrews)) {
 				break;
 			}
 		}

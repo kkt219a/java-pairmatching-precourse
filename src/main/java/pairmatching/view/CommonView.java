@@ -3,7 +3,6 @@ package pairmatching.view;
 import pairmatching.controller.PairMatchingController;
 import pairmatching.processor.InputProcessor;
 import pairmatching.processor.OutputProcessor;
-import pairmatching.processor.ViewState;
 
 public abstract class CommonView {
 	protected final PairMatchingController pairMatchingController;

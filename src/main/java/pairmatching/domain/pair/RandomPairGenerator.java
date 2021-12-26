@@ -24,6 +24,7 @@ public class RandomPairGenerator implements PairGenerator {
 			pairCrews.add(newCrews);
 		}
 		if(isOddSize(crews.size())) {
+			System.out.println("odd");
 			pairCrews.addLastCrew(crews.get(crews.size()-1));
 		}
 		return pairCrews;

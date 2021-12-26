@@ -25,6 +25,7 @@ public class PairCrews {
 	public void addLastCrew(Crew crew) {
 		Crews lastCrews = pairCrews.remove(pairCrews.size() - 1);
 		lastCrews.add(crew);
+		pairCrews.add(lastCrews);
 	}
 
 	public List<Crews> getPairCrews() {

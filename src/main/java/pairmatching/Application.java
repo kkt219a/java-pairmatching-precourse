@@ -1,10 +1,11 @@
 package pairmatching;
 
-import pairmatching.processor.OutputProcessor;
+import pairmatching.controller.PairMatchingController;
+import pairmatching.view.FeatureSelectView;
 
 public class Application {
     public static void main(String[] args) {
-        // TODO 구현 진행
-        new OutputProcessor().printPairInterface();
+        FeatureSelectView featureSelectView = new FeatureSelectView(new PairMatchingController());
+        featureSelectView.show();
     }
 }

@@ -1,4 +1,4 @@
-package pairmatching.processor;
+package pairmatching.view;
 
 public enum ViewState {
 	HIDE, SHOW;

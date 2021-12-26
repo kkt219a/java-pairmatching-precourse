@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import pairmatching.domain.Course;
 import pairmatching.domain.Crew.Crew;
 import pairmatching.domain.Crew.Crews;
+import pairmatching.domain.Feature;
 import pairmatching.domain.pair.Content;
 import pairmatching.dto.ContentInformationDto;
 import pairmatching.processor.CrewFile;
@@ -24,6 +25,10 @@ public class PairMatchingController {
 		this.pairService = new PairService(Crews.of(frontEndCrews), Crews.of(backEndCrews));
 	}
 
+	public Feature getFeature(String featureKey) {
+		return Feature.of(featureKey);
+	}
+
 	private List<Crew> makeCrews(List<String> names, Course course) {
 		return names.stream()
 			.map(name -> Crew.of(course,name))
@@ -32,6 +37,6 @@ public class PairMatchingController {
 
 	public List<Crews> addPair(ContentInformationDto contentInformationDto) {
 		Content content = contentInformationDto.toContent();
-		return crews = pairService.addPair(content);
+		return pairService.addPair(content);
 	}
 }
