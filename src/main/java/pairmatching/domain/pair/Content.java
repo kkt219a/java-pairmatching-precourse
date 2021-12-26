@@ -35,4 +35,16 @@ public class Content {
 	public int hashCode() {
 		return Objects.hash(course, level, mission);
 	}
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public boolean equalLevel(Level level) {
+		return this.level.equals(level);
+	}
+
+	public Level getLevel() {
+		return level;
+	}
 }
