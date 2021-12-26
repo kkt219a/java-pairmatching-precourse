@@ -36,4 +36,8 @@ public class Pair {
 	public Content getContent() {
 		return content;
 	}
+
+	public PairCrews getPairCrews() {
+		return new PairCrews(pairCrews.getPairCrews());
+	}
 }

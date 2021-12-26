@@ -1,5 +1,7 @@
 package pairmatching.service;
 
+import java.util.List;
+
 import pairmatching.constant.Notification;
 import pairmatching.domain.Course;
 import pairmatching.domain.Crew.Crews;
@@ -23,13 +25,14 @@ public class PairService {
 		this.backEndCrews = backEndCrews;
 	}
 
-	public void addPair(Content content) {
+	public List<Crews> addPair(Content content) {
 		PairCrews pairCrews = makePair(content);
 		Pair pair = Pair.of(content, pairCrews);
 		pairs.add(pair);
+		return pairCrews.getPairCrews();
 	}
 
-	public PairCrews makePair(Content content) {
+	private PairCrews makePair(Content content) {
 		int remainCount = 0;
 		PairCrews pairCrews = null;
 		for(; remainCount < MAX_PAIR_COUNT ; remainCount++) {

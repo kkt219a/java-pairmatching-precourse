@@ -23,6 +23,7 @@ public class Crews {
 	public static Crews of(List<Crew> crews) {
 		return new Crews(crews);
 	}
+
 	public static Crews of(Course course, List<String> crewNames) {
 		List<Crew> crews = crewNames.stream()
 			.map(name -> Crew.of(course, name))

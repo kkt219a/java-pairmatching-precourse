@@ -14,6 +14,10 @@ public class PairCrews {
 		this.pairCrews = new ArrayList<>();
 	}
 
+	public PairCrews(List<Crews> pairCrews) {
+		this.pairCrews = pairCrews;
+	}
+
 	public void add(Crews crews) {
 		pairCrews.add(crews);
 	}
@@ -21,6 +25,10 @@ public class PairCrews {
 	public void addLastCrew(Crew crew) {
 		Crews lastCrews = pairCrews.remove(pairCrews.size() - 1);
 		lastCrews.add(crew);
+	}
+
+	public List<Crews> getPairCrews() {
+		return new ArrayList<>(pairCrews);
 	}
 
 	@Override
